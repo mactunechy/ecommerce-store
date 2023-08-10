@@ -4,11 +4,9 @@ import Currency from "@/components/ui/currency";
 import useCart from "@/hooks/use-cart";
 import { ShippingForm } from "./shipping-form";
 
-interface Props {
-  removeCartItemRef: React.Ref<HTMLButtonElement>;
-}
+interface Props {}
 
-export const CartSummary: React.FC<Props> = ({ removeCartItemRef }) => {
+export const CartSummary: React.FC<Props> = () => {
   const items = useCart((state) => state.items);
 
   const totalPrice = items.reduce(

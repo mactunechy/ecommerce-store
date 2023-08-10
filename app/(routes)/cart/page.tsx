@@ -4,15 +4,11 @@ import Container from "@/components/ui/container";
 import useCart from "@/hooks/use-cart";
 import { CartItem } from "./components/cart-item";
 import { CartSummary } from "./components/cart-summary";
-import { ReactNode, useRef } from "react";
 
 interface Props {}
 
 const CartPage: React.FC<Props> = ({}) => {
   const cart = useCart();
-
-  //Hack: remove the z-index on the "Remove button icon"
-  const removeCartItemRef = useRef<HTMLButtonElement>(null);
 
   return (
     <div className="bg-white">
@@ -30,7 +26,7 @@ const CartPage: React.FC<Props> = ({}) => {
                 ))}
               </ul>
             </div>
-            <CartSummary removeCartItemRef={removeCartItemRef} />
+            <CartSummary />
           </div>
         </div>
       </Container>
